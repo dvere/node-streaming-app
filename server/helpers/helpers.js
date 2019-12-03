@@ -12,7 +12,7 @@ const generateStreamThumbnail = (stream_key) => {
         './server/thumbnails/'+stream_key+'.png',
     ];
 
-    spawn('/usr/bin/ffmpeg', args, {
+    spawn(cmd, args, {
         detached: true,
         stdio: "ignore"
     }).unref();
