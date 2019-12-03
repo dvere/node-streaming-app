@@ -5,7 +5,6 @@ const CronJob = require('cron').CronJob,
     port = config.rtmp_server.http.port;
  
 const job = new CronJob('*/2 * * * *', function () {
-    console.log("1 phut")
     request
         .get('http://192.168.129.26:' + port + '/api/streams', function (error, response, body) {
             let streams = JSON.parse(body);
